@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MeLembreiApp.Views.LembretePage">
+  <StackLayout Margin="20" VerticalOptions="StartAndExpand">
+    <Label Text="Titulo" />
+    <Entry Text="{Binding Titulo}" Placeholder="Título"/>
+    <Label Text="Detalhes" />
+    <Entry Text="{Binding Detalhes}" Placeholder="Detalhes"/>
+    <Label Text="Data Limite" />
+    <DatePicker VerticalOptions="CenterAndExpand" Date="{Binding DataLimite}">
+      <DatePicker.Format>dd/MM/yyyy</DatePicker.Format>        
+    </DatePicker>
+    <Label Text="Concluído" />
+    <Switch IsToggled="{Binding Concluido}" />
+    <Button Text="Salvar" BackgroundColor = "Color.Green" Clicked="OnSalvarClicked"/>
+    <Button x:Name="btnCancelar" Text="Deletar"  BackgroundColor = "Color.Red" Clicked="OnDeletarClicked"/>
+    <Button Text="Voltar" BackgroundColor = "Color.Blue" Clicked="OnVoltarClicked"/>
+  </StackLayout>
+</ContentPage>

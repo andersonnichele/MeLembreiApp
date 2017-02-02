@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MeLembreiApp.Views.ListaLembretesPage">
+  <ContentPage.ToolbarItems>
+    <ToolbarItem Text="Novo" Clicked="OnCriarLembrete">
+      <ToolbarItem.Icon>
+        <OnPlatform x:TypeArguments="FileImageSource"  />
+      </ToolbarItem.Icon>
+    </ToolbarItem>
+  </ContentPage.ToolbarItems>
+  <ListView x:Name="lstViewlembretes" Margin="20" ItemSelected="OnListLembreteSelected">
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell>
+          <StackLayout Margin="20,0,0,0" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+            <Label Text="{Binding Titulo}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
+            <Label Text="{Binding DataFormatada}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
+            <Label Text="OK" VerticalTextAlignment="Center" HorizontalOptions="End" IsVisible="{Binding Concluido}" />
+          </StackLayout>
+        </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+  </ListView>
+</ContentPage>
